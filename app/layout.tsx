@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Baumans } from 'next/font/google';
 import './globals.css';
 import { Providers } from './providers';
 
-const inter = Inter({
+const baumans = Baumans({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
+  weight: '400',
   display: 'swap',
-  variable: '--font-inter',
+  variable: '--font-baumans',
 });
 
 export const metadata: Metadata = {
@@ -23,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} font-sans`}>
+      <body className={`${baumans.variable} font-sans`}>
         <Providers>{children}</Providers>
       </body>
     </html>
