@@ -196,26 +196,22 @@ const Skills: React.FC = () => {
           })}
         </div>
 
-        {/* Tools & Technologies */}
+        {/* Tools & Technologies — Marquee */}
         <ScrollAnimatedSection animation="slide-up" threshold={0.2}>
           <div>
             <h2 className="text-4xl font-bold text-center text-gray-900 dark:text-white mb-16">
               Tools & Technologies
             </h2>
-            
-            <div className="group p-8 glass-card rounded-2xl p-8 border border-gray-200/50 dark:border-gray-700/50 hover:shadow-glass dark:hover:shadow-glass-dark transition-all duration-300">
-              <div className="flex flex-wrap gap-3">
-                {tools.map((tool, index) => (
-                  <ScrollAnimatedSection
+
+            <div className="relative overflow-hidden py-4 [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+              <div className="flex w-max gap-4 animate-marquee hover:[animation-play-state:paused]">
+                {[...tools, ...tools].map((tool, index) => (
+                  <span
                     key={index}
-                    animation="scale-in"
-                    delay={index * 50}
-                    threshold={0.8}
+                    className="shrink-0 whitespace-nowrap px-5 py-2.5 glass-card rounded-full border border-gray-200/50 dark:border-gray-700/50 text-gray-700 dark:text-gray-200 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300"
                   >
-                    <span className="px-4 py-2 bg-gradient-to-r from-blue-100 to-sky-100 dark:from-blue-900/30 dark:to-sky-900/30 text-primary-700 dark:text-primary-300 rounded-lg font-medium hover:scale-105 hover:shadow-md transition-all duration-300 cursor-default">
-                      {tool}
-                    </span>
-                  </ScrollAnimatedSection>
+                    {tool}
+                  </span>
                 ))}
               </div>
             </div>

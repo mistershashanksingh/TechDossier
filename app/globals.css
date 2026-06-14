@@ -195,6 +195,15 @@ html {
   transform-origin: 70% 80%;
   animation: wave 2.5s ease-in-out infinite;
 }
+
+/* Tools marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 35s linear infinite;
+}
 .group:hover .animate-wave {
   animation-duration: 1s;
 }
