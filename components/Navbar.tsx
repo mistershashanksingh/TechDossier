@@ -4,8 +4,6 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
-  FaSun as Sun,
-  FaMoon as Moon,
   FaHouse as Home,
   FaUser as User,
   FaCode as Code,
@@ -14,6 +12,10 @@ import {
   FaEnvelope as Mail,
   FaCircleUser as CircleUserRound
 } from 'react-icons/fa6';
+import { 
+  PiSunLight as Sun, 
+  PiMoonThin as Moon
+} from "react-icons/pi";
 import { useTheme } from '../contexts/ThemeContext';
 
 const Navbar: React.FC = () => {

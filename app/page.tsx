@@ -5,7 +5,6 @@ import {
   FaArrowRight as ArrowRight,
   FaDownload as Download,
   FaLaptopCode as Code,
-  FaServer as Server,
   FaBrain as Brain,
   FaMicrochip as Cpu,
   FaDatabase as Database,
@@ -90,7 +89,7 @@ const Home: React.FC = () => {
   return (
     <div className="relative">
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative">
+      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative pt-16 pb-8">
         {/* Floating Tech Icons with Parallax */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <TechSVGAnimations />
@@ -112,6 +111,9 @@ const Home: React.FC = () => {
               </div>
             );
           })}
+
+          {/* Floating glow blob (background decoration) */}
+          <div className="absolute bottom-24 left-1/2 -translate-x-1/2 w-72 h-72 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl animate-float"></div>
         </div>
 
         <div className="max-w-7xl mx-auto text-center relative z-10">
@@ -129,7 +131,7 @@ const Home: React.FC = () => {
               Hi, I'm{' '}
               <span className="relative inline-block">
                 <span className="bg-gradient-to-r from-cyan-400 via-orange-400 to-blue-600 bg-clip-text text-transparent animate-gradient-x">
-                  DevOps Pro
+                  Shashank Singh
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 via-sky-500/20 to-blue-600/20 blur-2xl animate-pulse"></div>
               </span>
@@ -138,8 +140,8 @@ const Home: React.FC = () => {
           
           <ScrollAnimatedSection animation="slide-up" delay={400} duration={1000} triggerOnce={false}>
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-              Passionate about building scalable infrastructure, ML pipelines, and exploring the intersection of{' '}
-              <span className="font-semibold text-primary-600 dark:text-primary-400 relative">
+              Passionate about building scalable infrastructure, pipelines, and exploring the intersection of{' '}
+              <span className="font-semibold text-orange-600 dark:text-orange-400 relative">
                 DevOps
                 <div className="absolute inset-0 bg-primary-600/10 blur-lg rounded"></div>
               </span>,{' '}
@@ -147,7 +149,7 @@ const Home: React.FC = () => {
                 MLOps
                 <div className="absolute inset-0 bg-teal-600/10 blur-lg rounded"></div>
               </span>, and{' '}
-              <span className="font-semibold text-orange-400 dark:text-orange-300 relative">
+              <span className="font-semibold text-primary-400 dark:text-primary-300 relative">
                 Quantum ML
                 <div className="absolute inset-0 bg-neural-600/10 blur-lg rounded"></div>
               </span>
@@ -181,12 +183,12 @@ const Home: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
               <Link
                 href="/projects"
-                className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-sky-400 text-white rounded-xl font-medium hover:shadow-neon hover:scale-105 transition-all duration-300 flex items-center space-x-2 backdrop-blur-sm border border-sky-400/20"
+                className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-sky-400 text-white rounded-xl font-medium hover:shadow-neon hover:scale-105 transition-all duration-300 flex items-center space-x-2 backdrop-blur-sm"
               >
                 <span>View My Work</span>
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-300" />
               </Link>
-              <button className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-sky-400 text-white rounded-xl font-medium hover:shadow-neon hover:scale-105 transition-all duration-300 flex items-center space-x-2 backdrop-blur-sm border border-sky-400/20">
+              <button className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-sky-400 text-white rounded-xl font-medium hover:shadow-neon hover:scale-105 transition-all duration-300 flex items-center space-x-2 backdrop-blur-sm">
                 <Download size={18} className="group-hover:animate-bounce" />
                 <span>Download CV</span>
               </button>
@@ -233,18 +235,11 @@ const Home: React.FC = () => {
                 ))}
               </div>
             </ScrollAnimatedSection>
-
-          {/* Floating Animation with Glassmorphism */}
-          <ScrollAnimatedSection animation="fade-in" delay={1200} triggerOnce={false}>
-            <div className="animate-float">
-              <div className="w-32 h-32 mx-auto bg-gradient-to-r from-cyan-500/30 to-blue-500/30 rounded-full blur-2xl backdrop-blur-sm"></div>
-            </div>
-          </ScrollAnimatedSection>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
+      <section className="pt-4 pb-20 px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-7xl mx-auto">
           <ScrollAnimatedSection animation="slide-up" threshold={0.2} triggerOnce={false}>
             <div className="text-center mb-16">

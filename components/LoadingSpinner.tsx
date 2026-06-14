@@ -1,6 +1,16 @@
 import React from 'react';
-import { FaServer as Server, FaBrain as Brain, FaMicrochip as Cpu, FaCode as Code } from 'react-icons/fa6';
-
+import { 
+  VscAzureDevops as Devops,
+  VscVr as Robot,
+  VscChip as Technology,
+  VscTasklist as Tasks
+ } from 'react-icons/vsc';
+import { 
+  LiaAtomSolid as Atom,
+  LiaLinode as Training,
+  LiaInfinitySolid as Infinity,
+  LiaDocker as Docker,
+ } from 'react-icons/lia';
 const LoadingSpinner: React.FC = () => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-white to-blue-50 dark:from-gray-900 dark:to-blue-900">
@@ -8,7 +18,7 @@ const LoadingSpinner: React.FC = () => {
       <div className="text-center">
         {/* Tech Icons - Simplified */}
         <div className="flex justify-center items-center space-x-6 mb-8">
-          {[Server, Brain, Cpu, Code].map((Icon, index) => (
+          {[Devops, Training, Robot, Atom].map((Icon, index) => (
             <div
               key={index}
               className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl p-2 animate-bounce"
@@ -25,18 +35,18 @@ const LoadingSpinner: React.FC = () => {
         {/* Central Logo */}
         <div className="mb-8">
           <div className="w-20 h-20 mx-auto bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl p-4 animate-pulse">
-            <Server className="w-full h-full text-white" />
+            <Infinity className="w-full h-full text-white" />
           </div>
         </div>
 
         {/* Loading Text */}
         <div className="space-y-4">
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
-            DevOps Pro
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-orange-400 to-blue-300 bg-clip-text text-transparent">
+            Hi! I'm Shashank Singh
           </h1>
           
           <h2 className="text-lg text-gray-600 dark:text-gray-300">
-            Loading Portfolio...
+            Loading My Tech Dossier...
           </h2>
           
           {/* Tech Stack Labels - Simplified */}
