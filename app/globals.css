@@ -1,0 +1,182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Enhanced font rendering for sharper text */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+}
+
+/* Improve text sharpness on high-DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  * {
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+}
+
+/* Hide all scrollbars */
+html, body, * {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar, *::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* =========================================
+   Navbar Glass Effects
+   ========================================= */
+.navbar-glass {
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  background: rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
+.dark .navbar-glass {
+  background: rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.navbar-glass-scrolled {
+  backdrop-filter: blur(25px) saturate(200%);
+  -webkit-backdrop-filter: blur(25px) saturate(200%);
+  background: rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.15);
+}
+
+.dark .navbar-glass-scrolled {
+  background: rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* Glassmorphism cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
+.dark .glass-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+}
+
+.glass-card-strong {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+}
+
+.dark .glass-card-strong {
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+/* =========================================
+   NEW: Fluid Mobile Menu Animations
+   ========================================= */
+/* The main container sitting directly under the navbar */
+.mobile-menu-wrapper {
+  position: fixed;
+  top: 64px; 
+  left: 0;
+  right: 0;
+  height: calc(100vh - 64px);
+  z-index: 40;
+  pointer-events: none;
+}
+
+/* The glass background that slides out from the navbar */
+.mobile-menu-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  /* The magic smoothness happens here */
+  transform-origin: top;
+  opacity: 0;
+  transform: translateY(-20px) scaleY(0.95);
+  transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark .mobile-menu-backdrop {
+  background: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* The actual links container that fades in slightly delayed */
+.mobile-menu-content {
+  position: relative;
+  z-index: 41;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 2rem;
+  gap: 1.5rem;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Active State Triggers */
+.mobile-menu-wrapper.is-open {
+  pointer-events: auto;
+}
+
+.mobile-menu-wrapper.is-open .mobile-menu-backdrop {
+  opacity: 1;
+  transform: translateY(0) scaleY(1);
+}
+
+.mobile-menu-wrapper.is-open .mobile-menu-content {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.05s; /* Slight delay so background moves first */
+}
+
+/* =========================================
+   Active Text Sharpness & Animation
+   ========================================= */
+.text-sharp {
+  /* Forces the browser to render the gradient edges cleanly */
+  -webkit-text-stroke: 0.3px transparent;
+  text-shadow: 0 0 1px rgba(0,0,0,0.05);
+  letter-spacing: 0.02em;
+}
+
+.dark .text-sharp {
+  text-shadow: 0 0 1px rgba(255,255,255,0.1);
+}
+
+@keyframes iconPop {
+  0% { transform: scale(0.8) translateY(2px); opacity: 0.5; }
+  50% { transform: scale(1.25) translateY(-2px); opacity: 1; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.active-icon {
+  animation: iconPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
