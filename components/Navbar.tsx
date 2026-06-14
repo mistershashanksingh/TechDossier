@@ -9,9 +9,9 @@ import {
   FaCode as Code,
   FaBriefcase as Briefcase,
   FaFolderOpen as FolderOpen,
-  FaEnvelope as Mail,
-  FaRegHand as Hand
+  FaEnvelope as Mail
 } from 'react-icons/fa6';
+import HelloAvatar from './HelloAvatar';
 import { 
   PiSunLight as Sun, 
   PiMoonThin as Moon
@@ -67,10 +67,8 @@ const Navbar: React.FC = () => {
                 className="flex items-center space-x-2 sm:space-x-3 text-xl sm:text-2xl font-bold bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600 bg-clip-text text-transparent hover:scale-105 transition-all duration-300 group"
               >
                 <div className="relative">
-                  <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
-                    <Hand className="w-4 h-4 sm:w-5 sm:h-5 text-white animate-wave" />
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300 -z-10"></div>
+                  <HelloAvatar className="w-9 h-9 sm:w-10 sm:h-10 group-hover:scale-110 transition-transform duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full blur-lg opacity-25 group-hover:opacity-40 transition-opacity duration-300 -z-10"></div>
                 </div>
                 <span className="hidden sm:block">Shashank</span>
                 <span className="block sm:hidden text-base">Shashank</span>
