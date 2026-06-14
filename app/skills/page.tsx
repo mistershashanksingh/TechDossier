@@ -14,6 +14,7 @@ import {
   VscTasklist as Tasks
  } from 'react-icons/vsc';
 import ScrollAnimatedSection from '@/components/ScrollAnimatedSection';
+import TechMarquee from '@/components/TechMarquee';
 
 const Skills: React.FC = () => {
   const skillCategories = [
@@ -115,14 +116,6 @@ const Skills: React.FC = () => {
     }
   ];
 
-  const tools = [
-    'Docker', 'Kubernetes', 'Jenkins', 'GitLab', 'Terraform', 'Ansible',
-    'Prometheus', 'Grafana', 'ELK Stack', 'AWS', 'GCP', 'Azure',
-    'Python', 'JavaScript', 'Go', 'React', 'Node.js', 'PostgreSQL',
-    'MongoDB', 'Redis', 'MLflow', 'Kubeflow', 'TensorFlow', 'PyTorch',
-    'Qiskit', 'Git', 'Linux', 'Nginx', 'Apache', 'Elasticsearch'
-  ];
-
   return (
     <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -203,18 +196,7 @@ const Skills: React.FC = () => {
               Tools & Technologies
             </h2>
 
-            <div className="relative overflow-hidden py-4 [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
-              <div className="flex w-max gap-4 animate-marquee hover:[animation-play-state:paused]">
-                {[...tools, ...tools].map((tool, index) => (
-                  <span
-                    key={index}
-                    className="shrink-0 whitespace-nowrap px-5 py-2.5 glass-card rounded-full border border-gray-200/50 dark:border-gray-700/50 text-gray-700 dark:text-gray-200 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300"
-                  >
-                    {tool}
-                  </span>
-                ))}
-              </div>
-            </div>
+            <TechMarquee />
           </div>
         </ScrollAnimatedSection>
 
