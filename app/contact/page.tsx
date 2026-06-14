@@ -162,14 +162,13 @@ const Contact: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Contact Information */}
-          <div className="lg:col-span-1 space-y-8">
-            <ScrollAnimatedSection animation="slide-right" delay={200} threshold={0.2}>
-              <div>
+          <div className="lg:col-span-1">
+            <ScrollAnimatedSection animation="slide-right" delay={200} threshold={0.2} className="h-full flex flex-col">
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">
                 Let's Connect
               </h2>
-              
-              <div className="space-y-6">
+
+              <div className="flex-1 flex flex-col justify-between gap-6">
                 {contactInfo.map((info, index) => {
                   const Icon = info.icon;
                   return (
@@ -200,62 +199,17 @@ const Contact: React.FC = () => {
                   );
                 })}
               </div>
-              </div>
-            </ScrollAnimatedSection>
-
-            {/* Social Links */}
-            <ScrollAnimatedSection animation="slide-right" delay={400} threshold={0.3}>
-              <div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">
-                Follow Me
-              </h3>
-              <div className="flex space-x-4">
-                {socialLinks.map((social, index) => {
-                  const Icon = social.icon;
-                  return (
-                    <a
-                      key={index}
-                      href={social.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`p-3 glass-card rounded-lg border border-gray-200/50 dark:border-gray-700/50 text-gray-600 dark:text-gray-400 ${social.color} hover:scale-110 transition-all duration-300`}
-                      title={social.name}
-                    >
-                      <Icon size={20} />
-                    </a>
-                  );
-                })}
-              </div>
-              </div>
-            </ScrollAnimatedSection>
-
-            {/* Availability Status */}
-            <ScrollAnimatedSection animation="slide-right" delay={600} threshold={0.3}>
-              <div>
-              <div className="p-6 bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 rounded-2xl border border-green-200/50 dark:border-green-700/50">
-                <div className="flex items-center space-x-3 mb-3">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="text-green-700 dark:text-green-300 font-semibold">
-                    Available for Work
-                  </span>
-                </div>
-                <p className="text-green-600 dark:text-green-400 text-sm">
-                  I'm currently open to new opportunities and interesting projects. 
-                  Let's discuss how we can work together!
-                </p>
-              </div>
-              </div>
             </ScrollAnimatedSection>
           </div>
 
-                    {/* Contact Form */}
+          {/* Contact Form */}
           <div className="lg:col-span-2">
-          <ScrollAnimatedSection animation="slide-left" delay={200} threshold={0.2}>
-            <div className="group p-8 glass-card rounded-2xl p-8 border border-gray-200/50 dark:border-gray-700/50">
+          <ScrollAnimatedSection animation="slide-left" delay={200} threshold={0.2} className="h-full flex flex-col">
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">
                 Send Me a Message
               </h2>
-              
+
+              <div className="group p-8 glass-card rounded-2xl border border-gray-200/50 dark:border-gray-700/50 flex-1">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
@@ -386,6 +340,47 @@ const Contact: React.FC = () => {
           </div>
         </div>
 
+        {/* Social Links */}
+        <ScrollAnimatedSection animation="slide-up" delay={200} threshold={0.3}>
+          <div className="mt-12 flex flex-col items-center">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">
+              Follow Me
+            </h3>
+            <div className="flex space-x-4">
+              {socialLinks.map((social, index) => {
+                const Icon = social.icon;
+                return (
+                  <a
+                    key={index}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`p-3 glass-card rounded-lg border border-gray-200/50 dark:border-gray-700/50 text-gray-600 dark:text-gray-400 ${social.color} hover:scale-110 transition-all duration-300`}
+                    title={social.name}
+                  >
+                    <Icon size={20} />
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        </ScrollAnimatedSection>
+
+        {/* Availability Status */}
+        <ScrollAnimatedSection animation="slide-up" delay={300} threshold={0.3}>
+          <div className="mt-12 p-6 bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 rounded-2xl border border-green-200/50 dark:border-green-700/50">
+            <div className="flex items-center space-x-3 mb-3">
+              <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+              <span className="text-green-700 dark:text-green-300 font-semibold">
+                Available for Work
+              </span>
+            </div>
+            <p className="text-green-600 dark:text-green-400 text-sm">
+              I'm currently open to new opportunities and interesting projects.
+              Let's discuss how we can work together!
+            </p>
+          </div>
+        </ScrollAnimatedSection>
 
         {/* FAQ Section */}
         <ScrollAnimatedSection animation="slide-up" delay={400} threshold={0.2}>
