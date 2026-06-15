@@ -168,20 +168,20 @@ const Contact: React.FC = () => {
                 Let's Connect
               </h2>
 
-              <div className="flex-1 flex flex-col justify-between gap-6">
+              <div className="flex-1 flex flex-col justify-between gap-3">
                 {contactInfo.map((info, index) => {
                   const Icon = info.icon;
                   return (
                     <div
                       key={index}
-                      className="group p-6 glass-card rounded-2xl border border-gray-200/50 dark:border-gray-700/50 hover:shadow-lg transition-all duration-300 hover:scale-105"
+                      className="group p-4 glass-card rounded-2xl border border-gray-200/50 dark:border-gray-700/50 hover:shadow-lg transition-all duration-300 hover:scale-105"
                     >
                       <div className="flex items-start space-x-4">
-                        <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                          <Icon className="text-white w-6 h-6" />
+                        <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <Icon className="text-white w-5 h-5" />
                         </div>
                         <div className="flex-1">
-                          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
+                          <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-0.5">
                             {info.title}
                           </h3>
                           <a
@@ -190,7 +190,7 @@ const Contact: React.FC = () => {
                           >
                             {info.content}
                           </a>
-                          <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                          <p className="text-sm text-gray-600 dark:text-gray-400 mt-0.5">
                             {info.description}
                           </p>
                         </div>
@@ -362,7 +362,7 @@ const Contact: React.FC = () => {
             </div>
 
              {/* Availability Status */}
-            <div className="mt-auto pt-12">
+            <div className="mt-auto pt-14">
               <div className="p-6 bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 rounded-2xl border border-green-200/50 dark:border-green-700/50">
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
