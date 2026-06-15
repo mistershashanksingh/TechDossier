@@ -200,7 +200,29 @@ const Contact: React.FC = () => {
                 })}
               </div>
 
-              
+              {/* Social Links */}
+              <div className="mt-auto pt-8">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">
+                  Follow Me
+                </h3>
+                <div className="flex space-x-4">
+                  {socialLinks.map((social, index) => {
+                    const Icon = social.icon;
+                    return (
+                      <a
+                        key={index}
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`p-3 glass-card rounded-lg border border-gray-200/50 dark:border-gray-700/50 text-gray-600 dark:text-gray-400 ${social.color} hover:scale-110 transition-all duration-300`}
+                        title={social.name}
+                      >
+                        <Icon size={20} />
+                      </a>
+                    );
+                  })}
+                </div>
+              </div>
             </ScrollAnimatedSection>
           </div>
 
@@ -338,44 +360,7 @@ const Contact: React.FC = () => {
                 </button>
               </form>
             </div>
-          </ScrollAnimatedSection>
-          </div>
-        </div>
 
-        {/* Social Links */}
-        <ScrollAnimatedSection animation="slide-up" delay={200} threshold={0.3}>
-          <div className="mt-12 flex flex-col items-center">
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">
-              Follow Me
-            </h3>
-            <div className="flex space-x-4">
-              {socialLinks.map((social, index) => {
-                const Icon = social.icon;
-                return (
-                  <a
-                    key={index}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`p-3 glass-card rounded-lg border border-gray-200/50 dark:border-gray-700/50 text-gray-600 dark:text-gray-400 ${social.color} hover:scale-110 transition-all duration-300`}
-                    title={social.name}
-                  >
-                    <Icon size={20} />
-                  </a>
-                );
-              })}
-            </div>
-          </div>
-        </ScrollAnimatedSection>
-
-        {/* Availability Status */}
-        <ScrollAnimatedSection animation="slide-up" delay={300} threshold={0.3}>
-          <div className="mt-12 p-6 bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 rounded-2xl border border-green-200/50 dark:border-green-700/50">
-            <div className="flex items-center space-x-3 mb-3">
-              <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-              <span className="text-green-700 dark:text-green-300 font-semibold">
-                Available for Work
-              </span>
             {/* Availability Status */}
             <div className="mt-auto pt-8">
               <div className="max-w-md mx-auto text-center p-6 bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 rounded-2xl border border-green-200/50 dark:border-green-700/50">
@@ -391,8 +376,8 @@ const Contact: React.FC = () => {
                 </p>
               </div>
             </div>
-          </div>
           </ScrollAnimatedSection>
+          </div>
         </div>
 
         {/* FAQ Section */}
