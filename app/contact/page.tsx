@@ -362,7 +362,7 @@ const Contact: React.FC = () => {
             </div>
 
              {/* Availability Status */}
-            <div className="mt-auto pt-8">
+            <div className="mt-auto pt-12">
               <div className="p-6 bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 rounded-2xl border border-green-200/50 dark:border-green-700/50">
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
